@@ -10,6 +10,14 @@
     <main>
     
     <h1>Tic Tac Toe</h1>
+    <div class="difficulty-container">
+        <label for="difficulty">Difficulty:</label>
+        <select id="difficulty">
+          <option value="easy">Easy</option>
+          <option value="medium">Medium</option>
+          <option value="hard" selected>Hard</option>
+        </select>
+      </div>
     <div class="container">
     <div class="game-section">
     <div class="game">
@@ -23,15 +31,6 @@
         <button class="box"></button>
         <button class="box"></button>
     </div>
-    <button id="reset-btn">Reset Game</button>
-    <div class="difficulty-container">
-        <label for="difficulty">Difficulty:</label>
-        <select id="difficulty">
-          <option value="easy">Easy</option>
-          <option value="medium">Medium</option>
-          <option value="hard">Hard</option>
-        </select>
-      </div>
 </div>
     <div class="scoreboard">
         <div class="score player-score">
@@ -48,7 +47,7 @@
         </div>
       </div>
 </div>
-
+<button id="reset-btn">Reset Game</button>
 </main>
 <script src="app.js"></script>
 </body>
