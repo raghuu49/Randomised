@@ -8,7 +8,16 @@
 </head>
 <body>
     <main>
+    
     <h1>Tic Tac Toe</h1>
+    <div class="difficulty-container">
+        <label for="difficulty">Difficulty:</label>
+        <select id="difficulty">
+          <option value="easy">Easy</option>
+          <option value="medium">Medium</option>
+          <option value="hard" selected>Hard</option>
+        </select>
+      </div>
     <div class="container">
     <div class="game">
         <button class="box"></button>
@@ -21,6 +30,20 @@
         <button class="box"></button>
         <button class="box"></button>
     </div>
+    <div class="scoreboard">
+        <div class="score player-score">
+          <h3>🧍 Player (X)</h3>
+          <p id="player-score">0</p>
+        </div>
+        <div class="score draw-score">
+          <h3>🤝 Draws</h3>
+          <p id="draw-score">0</p>
+        </div>
+        <div class="score computer-score">
+          <h3>🤖 Computer (O)</h3>
+          <p id="computer-score">0</p>
+        </div>
+      </div>
 </div>
 <button id="reset-btn">Reset Game</button>
 </main>
