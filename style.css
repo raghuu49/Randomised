@@ -1,103 +1,155 @@
-*{
-    padding: 0px;
-    margin: 0px;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
-body{
-    background-color: #EE85B5;
-    text-align: center;
+
+body {
+  background-color: #EE85B5;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-.container{
-    height: 70vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap:4vmin
+
+.container {
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 4vmin;
+  flex-wrap: wrap;
 }
-.game{
-    height: 60vmin;
-    width: 60vmin;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap:1.5vmin;
+
+.game {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5vmin;
+  width: 60vmin;
+  max-width: 90vw;
+  height: auto;
 }
-.box{
-    height: 18vmin;
-    width: 18vmin;
-    border-radius: 1rem;
-    border: none;
-    box-shadow: 0 0 1rem rgba(0,0,0,0.7);
-    font-size: 8vmin;
-    color: black;
+
+.box {
+  aspect-ratio: 1;
+  width: 18vmin;
+  max-width: 30vw;
+  border-radius: 1rem;
+  border: none;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.7);
+  font-size: 8vmin;
+  color: black;
+  background-color: white;
 }
-#reset-btn{
-    padding: 1rem;
-    font-size: 1.25rem;
-    background-color: black;
-    color: white;
-    border-radius: 1rem;
-    border: none;
+
+#reset-btn {
+  padding: 1rem;
+  font-size: 1.25rem;
+  background-color: black;
+  color: white;
+  border-radius: 1rem;
+  border: none;
+  margin-top: 2rem;
+  cursor: pointer;
 }
+
 .difficulty-container {
-    margin: 1rem 0;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: black;
+  margin: 1rem 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: black;
 }
 
 #difficulty {
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
-    border: none;
-    font-size: 1rem;
-    margin-left: 0.5rem;
-    background-color: white;
-    color: #333;
-    box-shadow: 0 0 0.5rem rgba(0,0,0,0.4);
-    cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 1rem;
+  margin-left: 0.5rem;
+  background-color: white;
+  color: #333;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.4);
+  cursor: pointer;
 }
-.winner{
-    background-color: #4CAF50;  
-    color: white;
-    border: 3px solid #fff;  
-    box-shadow: 0 0 10px rgba(0, 255, 0, 0.7)
+
+.winner {
+  background-color: #4CAF50;
+  color: white;
+  border: 3px solid #fff;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.7);
 }
 
 .scoreboard {
-    display: flex;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: #ffffff10;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+  min-width: 200px;
+  max-width: 90vw;
+}
+
+.score {
+  background-color: #ffffff20;
+  backdrop-filter: blur(6px);
+  border: 2px solid white;
+  border-radius: 1rem;
+  padding: 1rem 2rem;
+  text-align: center;
+  color: white;
+  transition: transform 0.2s;
+}
+
+.score:hover {
+  transform: scale(1.05);
+}
+
+.score h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+  text-shadow: 1px 1px 2px #000;
+}
+
+.score p {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* -------------------- MEDIA QUERIES -------------------- */
+
+@media (max-width: 768px) {
+  .container {
     flex-direction: column;
-    gap: 2rem;
-    background-color: #ffffff10;
-    padding: 1.5rem;
-    border-radius: 1rem;
-    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+    padding: 1rem;
   }
-  
+
+  .game {
+    width: 90vw;
+    gap: 2vw;
+  }
+
+  .box {
+    width: 28vw;
+    font-size: 12vw;
+  }
+
+  .scoreboard {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 1rem;
+  }
+
   .score {
-    background-color: #ffffff20;
-    backdrop-filter: blur(6px);
-    border: 2px solid white;
-    border-radius: 1rem;
-    padding: 1rem 2rem;
-    text-align: center;
-    color: white;
-    transition: transform 0.2s;
+    padding: 0.5rem 1rem;
   }
-  
-  .score:hover {
-    transform: scale(1.05);
+
+  #reset-btn {
+    width: 80%;
+    margin: 2rem auto;
   }
-  
-  .score h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-    color: #fff;
-    text-shadow: 1px 1px 2px #000;
-  }
-  
-  .score p {
-    font-size: 2rem;
-    font-weight: bold;
-  }
-  
+}
